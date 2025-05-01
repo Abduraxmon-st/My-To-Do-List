@@ -92,7 +92,7 @@ li {
 }
 
 li span {
-   width: 250px;
+   width: 80%;
    padding: 16px;
    font-size: 20px;
    color: #5A5A5A;
@@ -241,7 +241,12 @@ a {
       width: 100%;
       padding: 16% 4%;
    }
-
+   li span {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      padding: 10px;
+   }
    #add-btn,
    .delAll {
       font-size: 16px;
