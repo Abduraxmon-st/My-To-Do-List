@@ -1,0 +1,265 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   height: 100vh;
+   font-family: Overpass;
+   background-color: #FCFCFC;
+}
+
+.container {
+   width: 681px;
+   padding: 10% 4%;
+}
+
+h1 {
+   margin-bottom: 20px;
+   text-align: center;
+   font-size: 40px;
+   text-transform: uppercase;
+   font-weight: 900;
+   background: linear-gradient(to left, #CC00FF 30%, #5756FF 45%, #07FDFD 100%);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+#todo {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   height: 57px;
+   box-shadow: 0 10px 20px 0 #e8e8e8;
+   border-radius: 12px;
+}
+
+#todo-input,
+.edit-input {
+   width: 80%;
+   font-size: 20px;
+   padding: 16px;
+   border: none;
+   outline: none;
+   background: transparent;
+   color: #5A5A5A;
+}
+
+#add-btn {
+   text-align: center;
+   width: 15%;
+   height: 100%;
+   font-family: Overpass;
+   font-size: 20px;
+   border: none;
+   outline: none;
+   user-select: none;
+   background: linear-gradient(-115deg, #CC00FF 0%, #5756FF 60%, #07e6e6 100%);
+   background-size: 150%;
+   color: #fff;
+   border-radius: 0 12px 12px 0;
+   transition: .3s;
+}
+
+#add-btn:hover {
+   cursor: pointer;
+   background-position: 100% 0%;
+}
+
+ul {
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+   margin-top: 30px;
+}
+
+li {
+   position: relative;
+   display: flex;
+   width: 100%;
+   height: 58px;
+   padding-right: 8px;
+   border-radius: 12px;
+   box-shadow: 0 10px 20px 0 #e8e8e8;
+   list-style: none;
+   border: 1px solid #61616128;
+}
+
+li span {
+   width: 250px;
+   padding: 16px;
+   font-size: 20px;
+   color: #5A5A5A;
+   overflow: hidden;
+}
+
+.delele-btn,
+.edit-btn,
+.done-btn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: max-content;
+   margin: auto 0;
+   padding-right: 10px;
+   background: transparent;
+   border: none;
+}
+
+.delele-btn {
+   margin-left: auto;
+   z-index: 3;
+}
+
+.delele-btn img:hover,
+.edit-btn img:hover,
+.done-btn img:hover {
+   transform: scale(1.1);
+   cursor: pointer;
+}
+
+.delAll {
+   width: 120px;
+   height: 58px;
+   font-family: Overpass;
+   font-size: 20px;
+   border: none;
+   outline: none;
+   user-select: none;
+   background: linear-gradient(115deg, #CC00FF 0%, #ff0000 60%, #ff8000 100%);
+   background-size: 150%;
+   color: #fff;
+   border-radius: 12px;
+   transition: .3s;
+}
+
+.delAll:hover {
+   cursor: pointer;
+   background-position: 100% 0%;
+}
+
+a {
+   display: flex;
+   width: max-content;
+}
+
+.to-github {
+   width: 58px;
+   height: 58px;
+   border-radius: 12px;
+   border: none;
+   outline: none;
+   user-select: none;
+   background: linear-gradient(-45deg, #FFA63D, #FF3D77, #338AFF, #3CF0C5);
+   background-size: 600%;
+   animation: gradient 16s linear infinite;
+}
+
+.todo-bottom {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 40px;
+}
+
+.done-event{
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 100%;
+   height: 100%;
+   background: #00000018;
+   border-radius: 12px;
+}
+
+.done-event::before {
+   position: absolute;
+   content: "";
+   top: -4px;
+   right: 14px;
+   width: 60px;
+   height: 50px;
+   background: #fff;
+   border-radius: 0 0 8px 8px;
+   box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.259);
+}
+
+.done-event svg {
+   position: absolute;
+   right: 25px;
+   top: 2px;
+}
+
+@keyframes gradient {
+   0% {
+      background-position: 0% 50%;
+   }
+
+   50% {
+      background-position: 100% 50%;
+   }
+
+   100% {
+      background-position: 0% 50%;
+   }
+}
+
+::-webkit-scrollbar {
+   width: 10px;
+}
+
+::-webkit-scrollbar-track {
+   border-radius: 5px;
+   background: #D9D9D9;
+}
+
+::-webkit-scrollbar-thumb {
+   border-radius: 5px;
+   background: #5656ffbf;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: #5656ff;
+   cursor: pointer;
+}
+
+@media (max-width:769px) and (min-width: 451px) {
+   .container {
+      width: 100%;
+   }
+
+}
+
+@media (max-width:450px) {
+   .container {
+      width: 100%;
+      padding: 16% 4%;
+   }
+
+   #add-btn,
+   .delAll {
+      font-size: 16px;
+   }
+
+   .delAll {
+      width: 100px;
+      height: 46px;
+   }
+
+   .to-github {
+      width: 46px;
+      height: 46px;
+   }
+}
+
+@media (max-width:320px) {
+   h1 {
+      font-size: 30px;
+   }
+}
